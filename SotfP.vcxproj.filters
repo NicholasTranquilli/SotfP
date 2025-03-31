@@ -15,36 +15,36 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SotfP.h">
+    <ClInclude Include="src\SotfP.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OTF\OTF.h">
+    <ClInclude Include="src\OTF\OTF.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OTF\CFF\CFF.h">
+    <ClInclude Include="src\OTF\CFF\CFF.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OTF\CMAP\CMAP.h">
+    <ClInclude Include="src\OTF\CMAP\CMAP.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="utils.h">
+    <ClInclude Include="src\utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SotfP.cpp">
+    <ClCompile Include="src\SotfP.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OTF\OTF.cpp">
+    <ClCompile Include="src\OTF\OTF.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OTF\CFF\CFF.cpp">
+    <ClCompile Include="src\OTF\CFF\CFF.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OTF\CMAP\CMAP.cpp">
+    <ClCompile Include="src\OTF\CMAP\CMAP.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

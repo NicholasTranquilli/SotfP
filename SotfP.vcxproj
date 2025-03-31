@@ -131,18 +131,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="OTF\CFF\CFF.h" />
-    <ClInclude Include="OTF\CMAP\CMAP.h" />
-    <ClInclude Include="utils.h" />
-    <ClInclude Include="OTF\OTF.h" />
-    <ClInclude Include="SotfP.h" />
+    <ClInclude Include="src\OTF\CFF\CFF.h" />
+    <ClInclude Include="src\OTF\CMAP\CMAP.h" />
+    <ClInclude Include="src\utils.h" />
+    <ClInclude Include="src\OTF\OTF.h" />
+    <ClInclude Include="src\SotfP.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="OTF\CFF\CFF.cpp" />
-    <ClCompile Include="OTF\CMAP\CMAP.cpp" />
-    <ClCompile Include="OTF\OTF.cpp" />
-    <ClCompile Include="SotfP.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\OTF\CFF\CFF.cpp" />
+    <ClCompile Include="src\OTF\CMAP\CMAP.cpp" />
+    <ClCompile Include="src\OTF\OTF.cpp" />
+    <ClCompile Include="src\SotfP.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
