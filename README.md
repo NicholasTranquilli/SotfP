@@ -30,10 +30,15 @@ From my testing, any font downloaded from [Glyphr Studio](https://www.glyphrstud
 
 ## Credits And Resources
 [Adobe CFF Format Spec](https://adobe-type-tools.github.io/font-tech-notes/pdfs/5176.CFF.pdf)
+
 [Adobe Type 2 Charstring Format Spec](https://adobe-type-tools.github.io/font-tech-notes/pdfs/5177.Type2.pdf)
+
 [Adobe Type 1 FontFormat Spec](https://adobe-type-tools.github.io/font-tech-notes/pdfs/T1_SPEC.pdf)
+
 [CFF ‘Font Building’ Article](https://pomax.github.io/CFF-glyphlet-fonts/)
+
 [OTF Format Docs](https://learn.microsoft.com/en-us/typography/opentype/spec/otff)
+
 [Glyphr Studio](https://www.glyphrstudio.com/app/)  (Very useful for building test fonts)
 
 
