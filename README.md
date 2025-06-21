@@ -21,7 +21,7 @@ From my testing, any font downloaded from [Glyphr Studio](https://www.glyphrstud
 | :x: | Non-Format 4 CMAP tables |
 | :x: | Non-CFF glyph tables |
 | :x: | Font Libraries (fonts containing multiple fonts) |
-| :warning: :triangular_flag_on_post: | Parsing into 3D vectors and indices for graphics development |
+| :heavy_check_mark: | Parsing into 3D vectors and indices for graphics development |
 
 - :heavy_check_mark: Supported
 - :warning: Planned Future Development
@@ -35,7 +35,7 @@ From my testing, any font downloaded from [Glyphr Studio](https://www.glyphrstud
 
 [Adobe Type 1 FontFormat Spec](https://adobe-type-tools.github.io/font-tech-notes/pdfs/T1_SPEC.pdf)
 
-[CFF ‘Font Building’ Article](https://pomax.github.io/CFF-glyphlet-fonts/)
+[CFF â€˜Font Buildingâ€™ Article](https://pomax.github.io/CFF-glyphlet-fonts/)
 
 [OTF Format Docs](https://learn.microsoft.com/en-us/typography/opentype/spec/otff)
 
