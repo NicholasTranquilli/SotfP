@@ -46,11 +46,6 @@ lb::CMAP::CMAP(std::vector<unsigned char> v_bytes)
     for (int i = 0; i < segCount; i++)
         this->idRangeOffset.push_back(ByteToVal<unsigned short>(&v_bytes[start], start));
 
-    // TODO: Remove?
-    // Leaving this here for now, caused some issues before, I dont think this is relevant anymore
-    //for (int i = start; i < this->length; i++)
-    //    this->glyphIdArray.push_back(ByteToVal<unsigned short>(&v_bytes[start], start));
-
     // TODO: this glyphId approach wont work for all fonts
     // see: https://learn.microsoft.com/en-us/typography/opentype/spec/cmap
     if (this->glyphIdArray.size() == 0)
