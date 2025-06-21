@@ -203,7 +203,8 @@ int lb::CFF::DecodeInt(Index& idx, int& i)
 	else if (idx.data[old] == 28)
 	{
 		i += 2;
-		return ((int)idx.data[old + 1] << 8 | (int)idx.data[old + 2]);
+		short bounds = (short)((int)idx.data[old + 1] << 8 | (int)idx.data[old + 2]);
+		return bounds;
 	}
 	else if (idx.data[old] == 29)
 	{
@@ -235,7 +236,8 @@ int lb::CFF::DecodeInt(std::vector<unsigned char>& idx, int& i)
 	else if (idx[old] == 28)
 	{
 		i += 2;
-		return ((int)idx[old + 1] << 8 | (int)idx[old + 2]);
+		short bounds = (short)((int)idx[old + 1] << 8 | (int)idx[old + 2]);
+		return bounds;
 	}
 	else if (idx[old] == 29)
 	{
@@ -320,36 +322,26 @@ lb::CFF::CFF(std::vector<unsigned char>& v_bytes)
 	long long CharsetsStart = std::get<long long>(this->TopDictElements["charset"].bytes.front());
 
 	this->ParseCharset(this->Charset, CharsetsStart);
-}
 
-lb::CFF& lb::CFF::operator=(const CFF& v_copy)
-{
-	this->bytes = v_copy.bytes;
-	this->TopDictElements = v_copy.TopDictElements;
-	this->PrivateDictElements = v_copy.PrivateDictElements;
-	this->CharstringElements = v_copy.CharstringElements;
-	this->nGlyphs = v_copy.nGlyphs;
-	this->Head = v_copy.Head;
-	this->NameIndex = v_copy.NameIndex;
-	this->TopDictIndex = v_copy.TopDictIndex;
-	this->PrivateDictIndex = v_copy.PrivateDictIndex;
-	this->StringIndex = v_copy.StringIndex;
-	this->GlobalSubrIndex = v_copy.GlobalSubrIndex;
-	this->CharstringIndex = v_copy.CharstringIndex;
-	this->FontDictIndex = v_copy.FontDictIndex;
-	this->LocalSubrIndex = v_copy.LocalSubrIndex;
-	this->Charset = v_copy.Charset;
-
-	return *this;
+	// Font Bounds
+	this->FontBBox.minX = (int)std::get<long long>(this->TopDictElements["FontBBox"].bytes[0]);
+	this->FontBBox.minY = (int)std::get<long long>(this->TopDictElements["FontBBox"].bytes[1]);
+	this->FontBBox.maxX = (int)std::get<long long>(this->TopDictElements["FontBBox"].bytes[2]);
+	this->FontBBox.maxY = (int)std::get<long long>(this->TopDictElements["FontBBox"].bytes[3]);
 }
 
 std::vector<unsigned char> lb::CFF::GetPathAt(int v_id)
 {
 	std::vector<unsigned char> demo;
-	for (int i = this->CharstringIndex.offset[v_id] + 1; i < this->CharstringIndex.offset[v_id + 1] - 1; i++)
+	for (int i = this->CharstringIndex.offset[v_id] - 1; i < this->CharstringIndex.offset[v_id + 1] - 1; i++)
 		demo.push_back(this->CharstringIndex.data[i]);
 
 	return demo;
+}
+
+lb::CFF::BoundsBox lb::CFF::GetFontBounds()
+{
+	return this->FontBBox;
 }
 
 int lb::CFF::Index::GetDataStart()

@@ -5,12 +5,16 @@ void DebugPrintGlyphData(std::vector<lb::SotfP::PathElement> v_glyphData);
 
 int main()
 {
-	lb::SotfP myFont("Path/To/MyFont.otf");
+	//lb::SotfP myFont("Path/To/MyFont.otf");
+	lb::SotfP myFont("D:/Resources/test3-lg.otf", lb::SotfP::Processing_type::PreProcess);
 
 	// Example use 
 	std::vector<lb::SotfP::PathElement> glyphData = myFont.GetGlyph('A');
 	DebugPrintGlyphData(glyphData);
 	printf("\n\n");
+
+	lb::SotfP::DrawableData draw = myFont.GetDrawableData('A');
+
 }
 
 
@@ -94,3 +98,5 @@ void DebugPrintGlyphData(std::vector<lb::SotfP::PathElement> v_glyphData)
 		}
 	}
 }
+
+#undef LB_PARSE_CHAR_SWITCH

@@ -38,5 +38,6 @@ namespace lb
         CMAP() = default;
         CMAP(std::vector<unsigned char> v_bytes);
         int GetGlyphId(char v_char);
+        std::vector<unsigned short> GetAvailableChars();
     };
 }

@@ -170,11 +170,15 @@ namespace lb
 
 	class CFF
 	{
+    public:
+        struct BoundsBox { int minX, minY, maxX, maxY; };
+
+    private:
 		std::vector<unsigned char> bytes;
 		std::map<std::string, lb::cff::DictElement> TopDictElements;
 		std::map<std::string, lb::cff::DictElement> PrivateDictElements;
 		std::vector<std::string> CharstringElements;
-		unsigned short& nGlyphs;
+		unsigned short nGlyphs;
 
         struct Index
         {
@@ -216,6 +220,8 @@ namespace lb
         Index NameIndex, TopDictIndex, PrivateDictIndex, StringIndex, GlobalSubrIndex, CharstringIndex, FontDictIndex, LocalSubrIndex;
         Charsets Charset;
 
+        BoundsBox FontBBox;
+
         int MakeIndex(Index& r_idx, int v_start);
         int MakeIndexData(Index& r_idx, int& v_start);
         void ParseDict(Index& r_idx, std::map<std::string, lb::cff::DictElement>& r_map);
@@ -224,12 +230,13 @@ namespace lb
 	public:
 		CFF();
 		CFF(std::vector<unsigned char>& v_bytes);
-		CFF& operator=(const CFF& v_copy);
 
         int DecodeInt(Index& idx, int& i);
         int DecodeInt(std::vector<unsigned char>& idx, int& i);
 		double DecodeRealNumber(Index& idx, int& i);
 		std::vector<unsigned char> GetPathAt(int v_id);
+
+        BoundsBox GetFontBounds();
 	};
 }
 
